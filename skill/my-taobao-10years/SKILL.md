@@ -11,7 +11,7 @@ description: 用豆包电脑版只读用户本人的淘宝交易成功订单，�
 
 简短说清：先读列表、挑出数码产品及配件，再开小铺。这家小铺只放数码。只读本人交易成功订单；登录和验证码由本人操作；实际能读几年就展示几年。确认当前是用户本人账号，不确定就暂停，不自行换账号。没有浏览器操作能力时，可以接收用户已有的本地订单文件，不假装已经读取淘宝。
 
-以本 Skill 所在目录为基准定位 `scripts/shop.py`、`assets/template/`。若安装器只拿到了本文件，应取得**同一仓库的完整 Skill 目录**再继续，不能现场另造模板。不依赖固定用户名、盘符和绝对路径，不要求用户安装 git。已有 Python 直接用；缺 Python 要先说明并征得同意再安装。新建一个用户可找到的任务文件夹，把私有数据放其下；不把真实数据写进已安装的 Skill。
+以本 Skill 所在目录为基准定位 `scripts/shop.py`、`assets/template/`。若安装器只拿到了本文件，应取得**同一仓库的完整 Skill 目录**再继续，不能现场另造模板。不依赖固定用户名、盘符和绝对路径，不要求用户安装 git。已有 Python 直接用：依次试 `py -3 --version`、`python --version`、`python3 --version`，打印出 3.9 以上的版本号才算有；Windows 上 `where python` 能找到的可能只是微软商店占位程序，运行没有输出或退出码 9009 都算没装。缺 Python 要先说明并征得同意再安装，用户不同意就如实说开不了店。新建一个用户可找到的任务文件夹，把私有数据放其下；不把真实数据写进已安装的 Skill。
 
 ## 1. 只读淘宝列表，边读边保存
 
@@ -31,7 +31,7 @@ description: 用豆包电脑版只读用户本人的淘宝交易成功订单，�
 python "<Skill目录>/scripts/shop.py" analyze "<私有目录>/orders.json" "<私有目录>/profile.json"
 ```
 
-Mac 可用 `python3`，Windows 可用 `py -3`；不要照抄 POSIX shell 写法到 PowerShell。
+Mac 可用 `python3`，Windows 可用 `py -3`；不要照抄 POSIX shell 写法到 PowerShell。Windows PowerShell 先执行 `[Console]::OutputEncoding=[Text.Encoding]::UTF8`，否则脚本的中文提示会乱码。`orders.json`、`narrative.json` 必须是 UTF-8：不要用 `>`、`Out-File` 或不带编码的 `Set-Content` 写，用 Python 或 `[IO.File]::WriteAllText` 写。
 
 `profile.json` 给出买得最多的数码小类、品牌/颜色商品行数、跨订单回购、同系列购买顺序、各年和月份的订单节奏、证据商品ID、对比度和同款回购次数/间隔、同品类下单节奏、一单件数、系列顺序和按行为分类的六首候选池。只根据明确标注的分类/品牌/颜色统计；未标注不猜，分类不明先保留“未分类”。字段的提取依据见数据格式。品牌与颜色按**商品行**统计，回购按**独立订单**统计；数量另列，不能混称“买得最多”。同系列后买不等于升级、换掉或用过，只有商品代次有明确事实才讨论代次。
 

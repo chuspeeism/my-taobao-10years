@@ -17,6 +17,8 @@ from urllib.parse import quote
 from themes import theme_for
 from behavior import behavior_facts, song_candidates
 
+mimetypes.add_type("image/webp", ".webp")  # Windows 注册表里可能没有这个类型
+
 ROOT = Path(__file__).resolve().parents[1]
 # 这家小铺只放这个范围里的商品，说明书和数据格式写的也是这一句。
 DIGITAL_SCOPE = "实体数码产品及配件：手机、电脑及配件、显示器、键盘键帽、耳机音箱、相机影像、存储、游戏机和实体游戏、平板、手表、智能设备等。食品外卖、日用品、服装、书、课程，以及软件、激活码、密钥、账号、会员、兑换码、数字版游戏、远程安装和维修服务都不放"
@@ -45,7 +47,10 @@ SENSITIVE = {
 }
 
 def load(path):
-    return json.loads(Path(path).read_text(encoding="utf-8-sig"))
+    try:
+        return json.loads(Path(path).read_text(encoding="utf-8-sig"))
+    except UnicodeDecodeError:
+        raise ValueError(f"{Path(path).name} 不是 UTF-8 编码，请用 UTF-8 重新保存（Windows 不要用 >、Out-File 或不带编码的 Set-Content 写这个文件）")
 
 def save(path, obj):
     Path(path).parent.mkdir(parents=True, exist_ok=True)
