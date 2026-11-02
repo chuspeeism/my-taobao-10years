@@ -24,16 +24,18 @@
 
   return boxes.map((box) => {
     const text = box.innerText || box.textContent || '';
-    const rows = [...box.querySelectorAll('tr')].filter((tr) => [...tr.querySelectorAll('a')].some((a) => ITEM_LINK.test(a.href || '') && a.innerText.trim().length > 3));
+    const linkOf = (tr) => [...tr.querySelectorAll('a')].find((a) => ITEM_LINK.test(a.href || '') && a.innerText.trim().length > 3);
+    // 商品行：有商品链接，或者有商品图和金额（天猫超市等商品没有标准链接）；订单头和运费险这类服务行不算
+    const rows = [...box.querySelectorAll('tr')].filter((tr) => !/订单号/.test(tr.textContent) && (linkOf(tr) || (imageOf(tr) && money(tr.innerText).length)));
     const items = rows.map((tr) => {
       const tds = [...tr.querySelectorAll('td')];
-      const link = [...tr.querySelectorAll('a')].find((a) => ITEM_LINK.test(a.href || '') && a.innerText.trim().length > 3);
-      const cell = tds[0] || link.closest('td') || tr;
+      const link = linkOf(tr);
+      const cell = tds[0] || tr;
       const lines = (cell.innerText || '').split('\n').map((s) => s.trim()).filter(Boolean);
       const prices = tds[1] ? money(tds[1].innerText) : [];
-      const id = (link.href.match(/[?&]id=(\d+)/) || [])[1];
+      const id = link ? (link.href.match(/[?&]id=(\d+)/) || [])[1] : null;
       return {
-        title: clean(lines[0] || link.innerText),
+        title: clean(lines[0] || (link && link.innerText)),
         spec: clean(lines.slice(1).join(' ')),
         unit_price: prices.length ? prices[prices.length - 1] : null,
         qty: tds[2] ? tds[2].innerText.trim() : null,
@@ -45,7 +47,8 @@
 
     // 实付按订单只取一次：含「含运费」的那一格里第一个金额
     const paidCell = [...box.querySelectorAll('td, div')].filter((el) => /含运费|电子凭证/.test(el.innerText || '')).pop();
-    const paid = paidCell ? money(paidCell.innerText)[0] || null : null;
+    const firstRowCells = rows[0] ? [...rows[0].querySelectorAll('td')] : [];
+    const paid = (paidCell ? money(paidCell.innerText)[0] : null) || (firstRowCells[4] ? money(firstRowCells[4].innerText)[0] : null) || null;
     const shop = [...box.querySelectorAll('a')].find((a) => /view_shop\.htm|shop\.taobao\.com|\.tmall\.com\/?$/.test(a.href || ''));
 
     return {
