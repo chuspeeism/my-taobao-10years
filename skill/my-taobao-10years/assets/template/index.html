@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>十年小铺</title>
+<link rel="stylesheet" href="core.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="personalize.css">
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<!-- 十年小铺：首屏 = 方案六A「蓝色小电脑」（three.js 真 3D 小电脑 + 方格纸桌面货架）；其余各段 = 方案六C「标签海报」风格。
+     板块顺序：首屏 → 本店故事 → 本店 BGM / 影视人物 → 那年今日 → 年度小票 → 进货日历 → 本店专题 → 人气单品 → 全部货架 → 问问小豆 → 愿望清单。
+     结构固定，文字和颜色都从 data.js 读 -->
+<header class="nav">
+  <a class="brand" href="#top">
+    <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="2" width="36" height="36" rx="10" fill="#111"/><path d="M10 15h20l-1.6 14.4a2.6 2.6 0 0 1-2.6 2.3H14.2a2.6 2.6 0 0 1-2.6-2.3z" fill="var(--accent)"/><path d="M15.5 15v-2a4.5 4.5 0 0 1 9 0v2" fill="none" stroke="var(--accent)" stroke-width="2.6" stroke-linecap="round"/><circle cx="31" cy="9" r="3.4" fill="var(--accent2)"/></svg>
+    <b data-bind="shop"></b>
+  </a>
+  <nav>
+    <a href="#story">本店故事</a><a href="#bgm">本店 BGM / 影视人物</a><a href="#otd">那年今日</a><a href="#receipts">年度小票</a><a href="#calendar">进货日历</a><a href="#topics">本店专题</a><a href="#popular">人气单品</a><a href="#shelves">全部货架</a><a href="#service">问问小豆</a><a href="#wish">愿望清单</a>
+  </nav>
+  <div class="nav-act">
+    <a class="pill-btn" href="#shelves">进店逛逛</a>
+    <button class="bag" type="button" aria-label="看我的心头好" title="心头好">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+      <em class="bag-n" hidden>0</em>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="scene">
+    <h1 class="bigword"><span class="bw-row a" aria-hidden="true"></span><span class="bw-row b" aria-hidden="true"></span></h1>
+    <div class="hang" aria-hidden="true"><i class="thread"></i><span class="hang-sign"><i></i>营业中</span></div>
+    <div class="snaps"></div>
+    <div class="memo"><i class="tape"></i><b>本店关键词</b><ul></ul></div>
+    <div class="stage" role="group" aria-label="商品盒货架：鼠标扫过，盒子会一个个弹起来；左右方向键也能挑，回车打开">
+      <div class="shelf-stage"><div class="world"></div></div>
+    </div>
+    <div class="pc" aria-live="polite" title="点屏幕看详情">
+      <i class="pc-desk" aria-hidden="true"></i>
+      <i class="pc-top" aria-hidden="true"></i>
+      <div class="pc-side" aria-hidden="true"><i class="knob"></i><i class="slot"></i></div>
+      <div class="pc-mon">
+        <div class="screen">
+          <div class="scr-in"><span class="tag-no"></span><b class="tag-price"></b><span class="tag-name"></span><span class="tag-date"></span></div>
+          <i class="scr-dots" aria-hidden="true"></i><i class="scr-flash" aria-hidden="true"></i>
+        </div>
+        <i class="pc-note" aria-hidden="true"></i><i class="pc-led" aria-hidden="true"></i><i class="pc-grill" aria-hidden="true"></i>
+      </div>
+      <div class="pc-base" aria-hidden="true"><i class="pc-mouth"></i><i class="keys"><b></b><b></b><b></b></i></div>
+      <div class="paper-win"><div class="paper"><span class="pp-no"></span><p class="pp-line"></p><i class="pp-bar"></i></div></div>
+      <i class="pc-mouse" aria-hidden="true"></i>
+    </div>
+    <svg class="cat" viewBox="0 0 120 64" aria-hidden="true">
+      <path class="tail" d="M18 52c-14 2-16-12-4-14"/>
+      <ellipse class="body" cx="58" cy="44" rx="40" ry="18"/>
+      <path class="head" d="M80 50c-2-14 6-24 18-24s19 9 17 22c-1 7-9 10-18 10s-16-2-17-8z"/>
+      <path class="ear" d="M87 31l-2-13 10 8zM105 28l5-12 4 13z"/>
+      <path class="eye" d="M91 44q3 3 6 0M104 43q3 3 6 0"/>
+      <path class="paw" d="M70 60c4-4 10-4 14 0"/>
+      <text class="zz" x="102" y="12">z</text><text class="zz z2" x="112" y="4">z</text>
+    </svg>
+    <div class="intro">
+      <div class="kicker" data-bind="kicker"></div>
+      <p class="sub" data-bind="sub"></p>
+      <a class="btn-chunk" href="#shelves">逛逛货架</a>
+    </div>
+    <div class="hero-hint"><i aria-hidden="true"></i><span class="hint-txt"></span></div>
+  </div>
+  <div class="ticker" aria-hidden="true"><div class="ticker-in"></div></div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div class="story-side">
+      <div class="sec-head"><span class="label">店长的话</span><h2 class="chunk h-k">本店故事</h2></div>
+      <p class="since-open"></p>
+      <div class="stats"></div>
+    </div>
+    <div class="story-main">
+      <div class="story-note hs" data-reveal>
+        <span class="layer-chip">T 文本 · 店长的话</span>
+        <span class="ico i-note" data-icon="bubble"></span>
+        <p class="summary"></p>
+      </div>
+      <div class="kw"></div>
+    </div>
+  </div>
+</section>
+
+<section class="bgm" id="bgm">
+  <div class="wrap">
+    <div class="sec-head center"><span class="label l-k">揭晓</span><h2 class="chunk h-l">本店 BGM / 影视人物</h2><p class="bgm-q"></p></div>
+    <div class="reveal-grid">
+      <article class="pz pz-bgm" aria-label="本店 BGM"></article>
+      <article class="pz pz-role" aria-label="影视人物"></article>
+    </div>
+  </div>
+</section>
+
+<section class="otd" id="otd">
+  <div class="wrap">
+    <div class="sec-head center"><span class="label">回头看看</span><h2 class="chunk h-w hs">那年今日</h2><span class="ico i-head r" data-icon="ring"></span></div>
+    <div class="otd-grid"><div class="datecard"></div><div class="otd-list"></div></div>
+    <div class="since"></div>
+  </div>
+</section>
+
+<section class="receipts" id="receipts">
+  <div class="wrap sec-head row">
+    <div><span class="label">一年一张</span><h2 class="chunk h-k">年度小票</h2></div>
+    <div class="scroll-btns"><button type="button" data-sc="-1" aria-label="往前翻">‹</button><button type="button" data-sc="1" aria-label="往后翻">›</button></div>
+  </div>
+  <div class="printer"><i></i></div>
+  <div class="tickets"></div>
+</section>
+
+<section class="calendar" id="calendar">
+  <div class="box" data-board="画板 · 进货日历">
+    <div class="sec-head center"><span class="label l-k">按日期翻</span><h2 class="chunk h-l">进货日历</h2></div>
+    <div class="cal"></div>
+  </div>
+</section>
+
+<section class="topics" id="topics">
+  <div class="wrap">
+    <div class="sec-head center"><span class="label">限定专柜</span><h2 class="chunk h-w hs">本店专题</h2><span class="ico i-head l" data-icon="mega"></span></div>
+    <div class="topic-grid"></div>
+  </div>
+</section>
+
+<section class="popular" id="popular">
+  <div class="wrap">
+    <div class="sec-head center"><span class="label">镇店之宝</span><h2 class="chunk h-k">人气单品</h2><span class="ico i-head r" data-icon="heart"></span></div>
+    <div class="cards"></div>
+    <div class="more"><button class="pill-btn" type="button" data-more>换一批</button><span class="batch"></span></div>
+  </div>
+</section>
+
+<section class="shelves" id="shelves">
+  <div class="shop">
+    <div class="toolbar" aria-hidden="true">
+      <span class="tools"><i class="t-move on"></i><i class="t-frame"></i><i class="t-text">T</i><i class="t-hand"></i></span>
+      <span class="file" data-bind="shop"></span>
+      <span class="zoom">100%</span>
+    </div>
+    <div class="shop-in">
+      <div class="shelves-head">
+        <div><div class="sec-head"><span class="label l-k">收藏图鉴</span><h2 class="chunk h-l">全部货架</h2></div><p class="ty-muted">点开任意商品，标一下它现在怎么样了，或者设为心头好。记录只存在你这台电脑上。</p></div>
+        <div class="count"></div>
+      </div>
+      <div class="filters"></div>
+      <div class="racks"></div>
+    </div>
+  </div>
+</section>
+
+<section class="service" id="service">
+  <div class="box" data-board="画板 · 问问小豆">
+    <div class="svc-grid">
+      <div class="svc-side">
+        <div class="sec-head"><span class="label">订单小助手</span><h2 class="chunk h-v">问问<span data-bind="serviceShort"></span></h2></div>
+        <p class="ty-muted">按本页已经读到的记录回答；离线回答不是实时连接豆包。</p>
+        <div class="svc-icons" aria-hidden="true"><span class="ico s1" data-icon="bubble"></span><span class="ico s2" data-icon="thumb"></span><span class="ico s3" data-icon="heart"></span><span class="ico s4" data-icon="ring"></span></div>
+      </div>
+      <div class="chatwin">
+        <div class="cw-top"><i class="ava" aria-hidden="true"></i><div><b data-bind="service"></b><span class="cw-sub"></span></div><span class="cw-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="chat"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wish" id="wish">
+  <div class="wrap">
+    <div class="cart" data-board="画板 · 愿望清单">
+      <div class="cart-tabs"><button type="button" class="on" data-tab="all">愿望清单</button><button type="button" data-tab="due">待付款 <em class="due">0</em></button></div>
+      <div class="cart-head"><div class="sec-head"><span class="label" data-bind="planTitle"></span><h2 class="chunk h-k">愿望清单</h2></div><p class="ty-muted">豆包根据订单给的建议。可以改、可以删、可以打卡，进度存在你这台电脑上。</p></div>
+      <div class="plan"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="f-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg></span>
+    <div class="f-txt"><b class="chunk" data-bind="shop"></b><p data-bind="foot"></p></div>
+    <span class="f-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="personalize.js"></script>
+<script src="core.js"></script>
+<script src="three.global.min.js"></script>
+<script src="scheme.js"></script>
+<script src="experience.js"></script>
+</body>
+</html>

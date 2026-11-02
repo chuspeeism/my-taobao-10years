@@ -1,0 +1,191 @@
+/* ============================================================
+   我的淘宝十年 · 进化版模板 · 共用组件样式（三套方案共用）
+   方案自己的 style.css 只需改下面这组变量，就能把组件换成自己的样子。
+   ============================================================ */
+:root {
+  --bg: #0b0d12;
+  --bg2: #12151c;
+  --fg: #f2f4f8;
+  --muted: rgba(242, 244, 248, .58);
+  --line: rgba(242, 244, 248, .12);
+  --card: rgba(255, 255, 255, .04);
+  --card-hi: rgba(255, 255, 255, .08);
+  --accent: #3d7bff;
+  --accent2: #ff8a3d;
+  --on-accent: #fff;
+  --radius: 14px;
+  --font-sans: "PingFang SC", "HarmonyOS Sans SC", "MiSans", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --font-serif: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", "SimSun", Georgia, serif;
+  --font-num: "SF Pro Display", "Helvetica Neue", "Inter", Arial, var(--font-sans);
+  --font-mono: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --font-display: var(--font-sans);
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+.ty-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 36px; padding: 0 14px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--card); color: var(--fg);
+  font: 500 14px/1 var(--font-sans); cursor: pointer; white-space: nowrap;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.ty-btn:hover { background: var(--card-hi); border-color: color-mix(in srgb, var(--fg) 30%, transparent); }
+.ty-btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.ty-btn.small { height: 28px; padding: 0 10px; font-size: 12px; }
+.ty-btn:disabled { opacity: .4; cursor: default; }
+.ty-input {
+  height: 40px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--line);
+  background: var(--card); color: var(--fg); font: 15px var(--font-sans); outline: none; min-width: 0;
+}
+.ty-input:focus { border-color: var(--accent); }
+.ty-muted { color: var(--muted); }
+.ty-tag {
+  display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 6px;
+  font: 500 12px/1 var(--font-sans); background: var(--card-hi); color: var(--muted);
+}
+
+/* ---------- 商品图（缺图时的占位卡） ---------- */
+.ty-ph {
+  display: grid; place-items: center; width: 100%; height: 100%;
+  background: linear-gradient(135deg, var(--bg2), color-mix(in srgb, var(--accent) 18%, var(--bg2)));
+  color: var(--fg); font: 600 15px/1.4 var(--font-sans); text-align: center; padding: 12px;
+}
+
+/* ---------- 详情浮层 ---------- */
+.ty-modal { position: fixed; inset: 0; z-index: 900; display: none; }
+.ty-modal.open { display: block; }
+.ty-modal .scrim { position: absolute; inset: 0; background: rgba(0, 0, 0, .66); backdrop-filter: blur(6px); }
+.ty-modal .sheet {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: min(920px, calc(100vw - 32px)); max-height: calc(100vh - 48px); overflow: auto;
+  background: var(--bg2); color: var(--fg); border: 1px solid var(--line); border-radius: calc(var(--radius) + 6px);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); box-shadow: 0 40px 120px rgba(0, 0, 0, .6);
+  animation: tyPop .42s var(--ease);
+}
+@keyframes tyPop { from { opacity: 0; transform: translate(-50%, -46%) scale(.97); } }
+.ty-modal .pic { background: #fff; display: grid; place-items: center; min-height: 360px; position: relative; }
+.ty-modal .pic img { width: 100%; height: 100%; max-height: 520px; object-fit: contain; }
+.ty-modal .info { min-width: 0; padding: 28px 28px 24px; display: flex; flex-direction: column; gap: 14px; }
+.ty-modal .no { font: 500 12px var(--font-mono); letter-spacing: .12em; color: var(--muted); }
+.ty-modal h3 { margin: 0; font: 700 28px/1.2 var(--font-display); }
+.ty-modal .facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; font-size: 14px; }
+.ty-modal .facts dt { color: var(--muted); }
+.ty-modal .facts dd { margin: 0; }
+.ty-modal .line { font-size: 15px; line-height: 1.75; padding: 12px 14px; border-radius: 10px; background: var(--card); border-left: 3px solid var(--accent); }
+.ty-modal .raw { font-size: 12px; line-height: 1.6; color: var(--muted); }
+.ty-modal .close { position: absolute; right: 14px; top: 12px; z-index: 2; }
+.ty-status { display: flex; flex-wrap: wrap; gap: 6px; }
+.ty-status button { height: 28px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--muted); font: 13px var(--font-sans); cursor: pointer; }
+.ty-status button.on { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.ty-related { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+.ty-related .r { flex: 0 0 76px; cursor: pointer; text-align: center; font-size: 11px; color: var(--muted); }
+.ty-related .r .im { width: 76px; height: 76px; border-radius: 10px; background: #fff; overflow: hidden; margin-bottom: 4px; outline: 2px solid transparent; }
+.ty-related .r.cur .im { outline-color: var(--accent); }
+.ty-related .r img { width: 100%; height: 100%; object-fit: contain; }
+@media (max-width: 760px) {
+  .ty-modal .sheet { grid-template-columns: minmax(0, 1fr); top: auto; bottom: 0; transform: translateX(-50%); width: 100vw; max-height: 92vh; border-radius: 20px 20px 0 0; animation: tyUp .4s var(--ease); }
+  @keyframes tyUp { from { transform: translate(-50%, 30%); opacity: 0; } }
+  .ty-modal .pic { min-height: 240px; }
+  .ty-modal .pic img { max-height: 300px; }
+  .ty-modal h3 { font-size: 22px; }
+}
+
+/* ---------- 日历档案 ---------- */
+.ty-cal { display: grid; gap: 18px; }
+.ty-cal [hidden] { display: none !important; } /* 搜索结果和日历格二选一显示 */
+.ty-cal .bar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.ty-cal .bar .ty-input { flex: 1 1 260px; }
+.ty-cal .years { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+.ty-cal .years button {
+  flex: 0 0 auto; height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line);
+  background: transparent; color: var(--fg); font: 600 14px var(--font-num); cursor: pointer;
+}
+.ty-cal .years button small { font-weight: 400; color: var(--muted); margin-left: 4px; }
+.ty-cal .years button.on { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.ty-cal .years button.on small { color: inherit; opacity: .6; }
+.ty-cal .months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; }
+.ty-cal .months button {
+  height: 44px; border-radius: 10px; border: 1px solid var(--line); background: transparent; color: var(--muted);
+  font: 13px var(--font-sans); cursor: pointer; position: relative;
+}
+.ty-cal .months button.has { color: var(--fg); }
+.ty-cal .months button.has::after { content: attr(data-n); position: absolute; right: 6px; top: 4px; font: 600 10px var(--font-num); color: var(--accent); }
+.ty-cal .months button.on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--fg); }
+.ty-cal .months button:disabled { opacity: .35; cursor: default; }
+.ty-cal .main { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.ty-cal .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.ty-cal .grid .wd { font-size: 12px; color: var(--muted); text-align: center; padding-bottom: 4px; }
+.ty-cal .day {
+  aspect-ratio: 1 / 1.05; border-radius: 10px; border: 1px solid var(--line); background: var(--card);
+  position: relative; overflow: hidden; cursor: default; padding: 0; color: var(--muted); font: 12px var(--font-num); text-align: left;
+}
+.ty-cal .day .d { position: absolute; left: 6px; top: 5px; z-index: 2; }
+.ty-cal .day.has { cursor: pointer; color: #111; background: #fff; border-color: transparent; }
+.ty-cal .day.has img { position: absolute; inset: 14% 8% 8%; width: 84%; height: 78%; object-fit: contain; }
+.ty-cal .day.has .n { position: absolute; right: 5px; top: 4px; z-index: 2; min-width: 18px; height: 18px; border-radius: 9px; background: var(--accent); color: var(--on-accent); font: 600 11px/18px var(--font-num); text-align: center; padding: 0 5px; }
+.ty-cal .day.on { outline: 3px solid var(--accent); outline-offset: 1px; }
+.ty-cal .day.empty { visibility: hidden; }
+.ty-cal .detail { border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); padding: 16px; min-height: 260px; }
+.ty-cal .detail h4 { margin: 0 0 12px; font: 700 18px var(--font-display); }
+.ty-cal .row { display: grid; grid-template-columns: 64px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); cursor: pointer; }
+.ty-cal .row:first-of-type { border-top: 0; }
+.ty-cal .row .im { width: 64px; height: 64px; border-radius: 10px; background: #fff; overflow: hidden; }
+.ty-cal .row .im img { width: 100%; height: 100%; object-fit: contain; }
+.ty-cal .row b { display: block; font-size: 15px; margin-bottom: 2px; }
+.ty-cal .row span { font-size: 12px; color: var(--muted); }
+.ty-cal .row.hl { background: color-mix(in srgb, var(--accent) 14%, transparent); border-radius: 10px; }
+.ty-cal .results { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.ty-cal .results .row { border: 1px solid var(--line); border-radius: 12px; padding: 10px; }
+@media (max-width: 900px) {
+  .ty-cal .main { grid-template-columns: 1fr; }
+  .ty-cal .months { grid-template-columns: repeat(6, 1fr); }
+}
+
+/* ---------- 2027 计划 ---------- */
+.ty-plan { display: grid; gap: 16px; }
+.ty-plan .top { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.ty-plan .prog { flex: 1 1 200px; height: 8px; border-radius: 4px; background: var(--card-hi); overflow: hidden; }
+.ty-plan .prog i { display: block; height: 100%; background: var(--accent); transition: width .5s var(--ease); }
+.ty-plan .groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.ty-plan .group { border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); padding: 16px; display: grid; gap: 10px; align-content: start; }
+.ty-plan .group h4 { margin: 0; font: 700 17px var(--font-display); }
+.ty-plan .it { display: grid; grid-template-columns: 22px 1fr auto; gap: 10px; align-items: start; padding: 10px; border-radius: 10px; background: var(--card); }
+.ty-plan .it input[type=checkbox] { width: 18px; height: 18px; margin-top: 2px; accent-color: var(--accent); }
+.ty-plan .it.done .txt { text-decoration: line-through; color: var(--muted); }
+.ty-plan .it .txt { font-size: 15px; line-height: 1.5; outline: none; border-radius: 4px; }
+.ty-plan .it .txt:focus { background: var(--card-hi); }
+.ty-plan .it .basis { font-size: 12px; color: var(--muted); line-height: 1.55; margin-top: 4px; }
+.ty-plan .it .meta { display: flex; gap: 6px; align-items: center; }
+.ty-plan .it select { background: transparent; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; font-size: 12px; height: 24px; }
+.ty-plan .it .del { background: none; border: 0; color: var(--muted); cursor: pointer; font-size: 16px; }
+.ty-plan .note { width: 100%; margin-top: 6px; font-size: 12px; height: 30px; }
+
+/* ---------- 问豆包 ---------- */
+.ty-chat { display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+.ty-chat .log { flex: 1 1 auto; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding: 4px 2px; min-height: 160px; }
+.ty-chat .msg { max-width: 86%; padding: 12px 14px; border-radius: 14px; font-size: 15px; line-height: 1.7; white-space: pre-wrap; word-break: break-word; }
+.ty-chat .msg.me { align-self: flex-end; background: var(--accent); color: var(--on-accent); border-bottom-right-radius: 4px; }
+.ty-chat .msg.ai { align-self: flex-start; background: var(--card-hi); color: var(--fg); border-bottom-left-radius: 4px; }
+.ty-chat .msg .src { display: block; margin-top: 8px; font-size: 11px; color: var(--muted); }
+.ty-chat .msg .thumbs { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+.ty-chat .msg .thumbs button { width: 52px; height: 52px; border-radius: 8px; background: #fff; border: 0; padding: 0; overflow: hidden; cursor: pointer; }
+.ty-chat .msg .thumbs img { width: 100%; height: 100%; object-fit: contain; }
+.ty-chat .msg.typing::after { content: "▍"; animation: tyBlink 1s steps(2) infinite; }
+@keyframes tyBlink { 50% { opacity: 0; } }
+.ty-chat .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.ty-chat .chips button { height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--fg); font: 13px var(--font-sans); cursor: pointer; }
+.ty-chat .chips button:hover { border-color: var(--accent); }
+.ty-chat form { display: flex; gap: 8px; }
+.ty-chat form .ty-input { flex: 1; }
+.ty-chat .mode { font-size: 11px; color: var(--muted); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.ty-chat .mode i { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); display: inline-block; margin-right: 4px; }
+.ty-chat .mode.live i { background: #34c759; box-shadow: 0 0 8px #34c759; }
+.ty-chat .handoff { background: none; border: 0; color: var(--accent); font-size: 12px; cursor: pointer; padding: 0; text-decoration: underline; }
+
+/* ---------- 那年今日 / 提示 ---------- */
+.ty-toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(20px); z-index: 1000; background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: 999px; font-size: 14px; opacity: 0; transition: .3s var(--ease); pointer-events: none; }
+.ty-toast.show { opacity: 1; transform: translateX(-50%); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .14s !important; }
+}

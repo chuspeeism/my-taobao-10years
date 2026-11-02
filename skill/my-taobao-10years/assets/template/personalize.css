@@ -1,0 +1,45 @@
+/* 固定原版层次：大字是淡底纹、盒子是多色粉彩、便签浅底、跑马灯鲜明。 */
+.hero { --fg:var(--hero-ink,#1f2340); background:radial-gradient(70% 55% at 50% 38%,var(--hero-glow,#fbf9ff),transparent 72%),var(--hero-bg,#f3eefc); }
+.hero .bw-row.a { color:var(--hero-word,#cbd8fd); }
+.hero .bw-row.b { color:var(--hero-word2,#e2e7fb); }
+.hero .memo { background:linear-gradient(var(--memo-top,#efe4ff),var(--memo-bottom,#e6d8ff)); }
+.hero .snap .sn-im { background:var(--hero-sn-im,#efe6ff); }
+.hero .ticker { background:var(--ticker,#2f45ff); color:#fff; }
+.hero .screen { background:radial-gradient(120% 90% at 30% 20%,var(--screen-top,#30365a),var(--screen-bg,#171a2c) 70%); }
+.hero .scr-in { color:var(--screen-fg,#f4f7ff); }
+.hero .scr-in .tag-no { color:var(--screen-label,#9fb6ff); }
+.hero .scr-in .tag-date { color:var(--screen-date,#b9c8f5); }
+.pcard.c1 { --pt:var(--on-accent); }
+.pcard.c2 { --pt:var(--on-accent2); }
+.audio-control { position:fixed; right:16px; bottom:16px; z-index:90; border:2px solid var(--fg); border-radius:30px; background:var(--bg2); color:var(--fg); padding:10px 15px; cursor:pointer; box-shadow:0 4px 15px #0002; }
+.demo-badge { position:fixed; left:8px; bottom:8px; z-index:80; color:#fff; background:#222; border-radius:5px; padding:4px 10px; font-size:11px; pointer-events:none; }
+.song-options { margin:45px auto 0; max-width:800px; background:var(--bg2); color:var(--fg); padding:20px; border:2px solid currentColor; border-radius:15px; }
+.song-options details { border-bottom:1px solid #0003; padding:12px 0; }
+.song-options summary { cursor:pointer; font-weight:700; }
+.song-options a { text-decoration:underline; }
+.handoff-text { display:block; width:100%; min-height:130px; font:inherit; }
+.profile-insights { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:28px; color:var(--fg); }
+.profile-insights .insight-scope { grid-column:1/-1; margin:0; font-size:12px; }
+.profile-insights article { border:1px solid currentColor; border-radius:12px; padding:16px; background:var(--bg2); font-size:13px; }
+.profile-insights article p { margin:8px 0; }
+.profile-insights button { border:0; padding:3px 0; background:none; color:inherit; text-align:left; text-decoration:underline; cursor:pointer; font:inherit; }
+@media(max-width:760px) { .profile-insights { grid-template-columns:1fr; } }
+@media(max-width:760px) { .audio-control { bottom:30px; right:8px; max-width:200px; font-size:12px; } .demo-badge { bottom:4px; font-size:10px; } }
+.h-v,.kw-s.k3,.g-tier.t2,.ago { color:var(--on-accent2); }
+.stat.c-v { --st:var(--on-accent2); }
+.t-v { --tt:var(--on-accent2); --kc:var(--on-accent2); }
+@media(max-width:760px) { .audio-control { bottom:8px; right:8px; } .demo-badge { bottom:48px; } }
+
+.music-credit {font-size:12px;line-height:1.6;margin-top:14px;}
+.music-credit summary {cursor:pointer;text-decoration:underline;}
+.music-credit a {text-decoration:underline;}
+
+.hero:not([data-theme="original-digital"]) .pc-mon { background:linear-gradient(135deg,var(--pc-handle),var(--pc-body)); }
+.hero:not([data-theme="original-digital"]) .pc-top { background:linear-gradient(var(--pc-handle),var(--pc-frame)); }
+.hero:not([data-theme="original-digital"]) .pc-side { background:linear-gradient(90deg,var(--pc-body),var(--pc-side)); }
+.hero:not([data-theme="original-digital"]) .pc-base { background:linear-gradient(var(--pc-frame),var(--pc-base)); }
+.hero:not([data-theme="original-digital"]) .pc-note { background:linear-gradient(var(--memo-top),var(--memo-bottom)); }
+/* 装饰翻牌旋转可暂时越过视口；约束根画布，保留板块内部的横向货架滚动。 */
+html { overflow-x:clip; }
+
+.insight-links {display:flex;flex-direction:column;align-items:flex-start;gap:5px;margin-top:8px;}

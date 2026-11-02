@@ -1,0 +1,405 @@
+{
+  "schema_version": 1,
+  "demo": true,
+  "coverage": {
+    "complete": false,
+    "note": "虚构示意数据，仅含模拟日期；不是任何人的订单"
+  },
+  "orders": [
+    {
+      "id": "demo-outdoor-001",
+      "date": "2019-03-10",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 39,
+      "items": [
+        {
+          "title": "【虚构示意】山线背包",
+          "name": "山线背包",
+          "category": "徒步背包",
+          "brand": "山线",
+          "color": "绿色",
+          "qty": 1,
+          "spec": "绿色（虚构）",
+          "product_key": "山线背包",
+          "image": "images/demo-001.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-002",
+      "date": "2019-06-11",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 56,
+      "items": [
+        {
+          "title": "【虚构示意】露原帐篷",
+          "name": "露原帐篷",
+          "category": "帐篷",
+          "brand": "露原",
+          "color": "米白",
+          "qty": 1,
+          "spec": "米白（虚构）",
+          "product_key": "露原帐篷",
+          "image": "images/demo-002.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-003",
+      "date": "2019-10-12",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 73,
+      "items": [
+        {
+          "title": "【虚构示意】山线头灯 第1代",
+          "name": "山线头灯 第1代",
+          "category": "户外照明",
+          "brand": "山线",
+          "color": "绿色",
+          "qty": 1,
+          "spec": "绿色（虚构）",
+          "product_key": "山线头灯 第1代",
+          "image": "images/demo-003.svg",
+          "product_line": "山线头灯",
+          "generation": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-004",
+      "date": "2020-03-13",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 90,
+      "items": [
+        {
+          "title": "【虚构示意】山线背包",
+          "name": "山线背包",
+          "category": "徒步背包",
+          "brand": "山线",
+          "color": "绿色",
+          "qty": 1,
+          "spec": "绿色（虚构）",
+          "product_key": "山线背包",
+          "image": "images/demo-004.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-005",
+      "date": "2020-06-14",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 107,
+      "items": [
+        {
+          "title": "【虚构示意】露原帐篷",
+          "name": "露原帐篷",
+          "category": "帐篷",
+          "brand": "露原",
+          "color": "米白",
+          "qty": 1,
+          "spec": "米白（虚构）",
+          "product_key": "露原帐篷",
+          "image": "images/demo-005.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-006",
+      "date": "2020-10-15",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 39,
+      "items": [
+        {
+          "title": "【虚构示意】山线头灯 第2代",
+          "name": "山线头灯 第2代",
+          "category": "户外照明",
+          "brand": "山线",
+          "color": "绿色",
+          "qty": 1,
+          "spec": "绿色（虚构）",
+          "product_key": "山线头灯 第2代",
+          "image": "images/demo-006.svg",
+          "product_line": "山线头灯",
+          "generation": 2
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-007",
+      "date": "2021-03-16",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 56,
+      "items": [
+        {
+          "title": "【虚构示意】山线背包",
+          "name": "山线背包",
+          "category": "徒步背包",
+          "brand": "山线",
+          "color": "绿色",
+          "qty": 1,
+          "spec": "绿色（虚构）",
+          "product_key": "山线背包",
+          "image": "images/demo-007.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-008",
+      "date": "2021-06-17",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 73,
+      "items": [
+        {
+          "title": "【虚构示意】露原帐篷",
+          "name": "露原帐篷",
+          "category": "帐篷",
+          "brand": "露原",
+          "color": "米白",
+          "qty": 1,
+          "spec": "米白（虚构）",
+          "product_key": "露原帐篷",
+          "image": "images/demo-008.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-009",
+      "date": "2021-10-18",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 90,
+      "items": [
+        {
+          "title": "【虚构示意】山线头灯 第3代",
+          "name": "山线头灯 第3代",
+          "category": "户外照明",
+          "brand": "山线",
+          "color": "绿色",
+          "qty": 1,
+          "spec": "绿色（虚构）",
+          "product_key": "山线头灯 第3代",
+          "image": "images/demo-009.svg",
+          "product_line": "山线头灯",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-010",
+      "date": "2022-03-10",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 107,
+      "items": [
+        {
+          "title": "【虚构示意】山线背包",
+          "name": "山线背包",
+          "category": "徒步背包",
+          "brand": "山线",
+          "color": "绿色",
+          "qty": 1,
+          "spec": "绿色（虚构）",
+          "product_key": "山线背包",
+          "image": "images/demo-010.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-011",
+      "date": "2022-06-11",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 39,
+      "items": [
+        {
+          "title": "【虚构示意】露原帐篷",
+          "name": "露原帐篷",
+          "category": "帐篷",
+          "brand": "露原",
+          "color": "米白",
+          "qty": 1,
+          "spec": "米白（虚构）",
+          "product_key": "露原帐篷",
+          "image": "images/demo-011.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-012",
+      "date": "2022-10-12",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 56,
+      "items": [
+        {
+          "title": "【虚构示意】山线头灯 第4代",
+          "name": "山线头灯 第4代",
+          "category": "户外照明",
+          "brand": "山线",
+          "color": "绿色",
+          "qty": 1,
+          "spec": "绿色（虚构）",
+          "product_key": "山线头灯 第4代",
+          "image": "images/demo-012.svg",
+          "product_line": "山线头灯",
+          "generation": 4
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-013",
+      "date": "2023-03-13",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 73,
+      "items": [
+        {
+          "title": "【虚构示意】山线背包",
+          "name": "山线背包",
+          "category": "徒步背包",
+          "brand": "山线",
+          "color": "绿色",
+          "qty": 1,
+          "spec": "绿色（虚构）",
+          "product_key": "山线背包",
+          "image": "images/demo-013.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-014",
+      "date": "2023-06-14",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 90,
+      "items": [
+        {
+          "title": "【虚构示意】露原帐篷",
+          "name": "露原帐篷",
+          "category": "帐篷",
+          "brand": "露原",
+          "color": "米白",
+          "qty": 1,
+          "spec": "米白（虚构）",
+          "product_key": "露原帐篷",
+          "image": "images/demo-014.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-015",
+      "date": "2023-10-15",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 107,
+      "items": [
+        {
+          "title": "【虚构示意】山线头灯 第5代",
+          "name": "山线头灯 第5代",
+          "category": "户外照明",
+          "brand": "山线",
+          "color": "绿色",
+          "qty": 1,
+          "spec": "绿色（虚构）",
+          "product_key": "山线头灯 第5代",
+          "image": "images/demo-015.svg",
+          "product_line": "山线头灯",
+          "generation": 5
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-016",
+      "date": "2024-03-16",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 39,
+      "items": [
+        {
+          "title": "【虚构示意】山线背包",
+          "name": "山线背包",
+          "category": "徒步背包",
+          "brand": "山线",
+          "color": "绿色",
+          "qty": 1,
+          "spec": "绿色（虚构）",
+          "product_key": "山线背包",
+          "image": "images/demo-016.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-017",
+      "date": "2024-06-17",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 56,
+      "items": [
+        {
+          "title": "【虚构示意】露原帐篷",
+          "name": "露原帐篷",
+          "category": "帐篷",
+          "brand": "露原",
+          "color": "米白",
+          "qty": 1,
+          "spec": "米白（虚构）",
+          "product_key": "露原帐篷",
+          "image": "images/demo-017.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-018",
+      "date": "2024-10-18",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 73,
+      "items": [
+        {
+          "title": "【虚构示意】山线头灯 第6代",
+          "name": "山线头灯 第6代",
+          "category": "户外照明",
+          "brand": "山线",
+          "color": "绿色",
+          "qty": 1,
+          "spec": "绿色（虚构）",
+          "product_key": "山线头灯 第6代",
+          "image": "images/demo-018.svg",
+          "product_line": "山线头灯",
+          "generation": 6
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-closed",
+      "date": "2024-11-02",
+      "status": "交易关闭",
+      "paid": 100,
+      "items": [
+        {
+          "title": "不展示的示意商品"
+        }
+      ]
+    },
+    {
+      "id": "demo-outdoor-refund",
+      "date": "2024-11-03",
+      "status": "交易成功",
+      "refund": "已退款",
+      "paid": 100,
+      "items": [
+        {
+          "title": "不展示的退款示意商品"
+        }
+      ]
+    }
+  ]
+}
