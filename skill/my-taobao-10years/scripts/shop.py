@@ -67,7 +67,30 @@ def family(cat):
             return k
     return "其他"
 
+def requested_window(source):
+    """以输入记录的采集日计算十年窗口，不依赖运行机器的当天日期。"""
+    demo = source.get("demo", False)
+    if not isinstance(demo, bool):
+        raise ValueError("demo 须为布尔值；真实订单不能标作示意")
+    coverage = source.get("coverage", {})
+    if not isinstance(coverage, dict):
+        raise ValueError("coverage 须为对象")
+    value = coverage.get("as_of")
+    if value is None and demo:
+        return None
+    if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        raise ValueError("真实订单须在 coverage.as_of 写明本次采集日（北京时间YYYY-MM-DD），不能猜测十年范围")
+    end = date.fromisoformat(value)
+    if end.year <= 10:
+        raise ValueError("采集日无法回溯十年")
+    try:
+        start = end.replace(year=end.year - 10)
+    except ValueError:
+        start = end.replace(year=end.year - 10, day=28)
+    return {"from": start.isoformat(), "to": end.isoformat()}
+
 def analyze(source, scope="auto"):
+    window = requested_window(source)
     rows = source.get("orders", [])
     if not isinstance(rows, list):
         raise ValueError("orders 必须是数组")
@@ -84,14 +107,19 @@ def analyze(source, scope="auto"):
             excluded["重复列表记录"] += 1
             continue
         seen[rid] = row
+        day = row.get("date", "")
+        if not isinstance(day, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", day):
+            raise ValueError("每单须有YYYY-MM-DD格式的列表日期")
+        date.fromisoformat(day)
+        if window and not window["from"] <= day <= window["to"]:
+            excluded["请求十年范围之外"] += 1
+            continue
         if row.get("status") != "交易成功":
             excluded["非交易成功或状态不明"] += 1
             continue
         if row.get("refund") in ("已退款", "退款中", "部分退款"):
             excluded["退款或退款中待核"] += 1
             continue
-        day = row.get("date", "")
-        date.fromisoformat(day)
         if not row.get("items"):
             raise ValueError("交易成功订单缺少商品，不能静默丢弃")
         normalized.append(row)
@@ -166,6 +194,7 @@ def analyze(source, scope="auto"):
     chosen_rank = rank("cat", selected)
     treasure = max(selected, key=lambda i: (i["price"] is not None, i["price"] or 0, i["date"]), default=None)
     return {"schema_version": 1, "demo": bool(source.get("demo")), "mainline": main,
+            "requested_range": window,
             "selection": "全部消费" if scope == "all" or not focused else main + "主线（可改全部消费）",
             "count_basis": "品类/品牌/颜色按商品行计数；回购按独立订单；数量另列；不汇总消费金额",
             "coverage": source.get("coverage", {"complete": False, "note": "未提供覆盖报告"}),
@@ -218,6 +247,7 @@ def webpage(p, narrative=None):
     prefix = "【虚构示意】" if demo else ""
     answer = f'本页展示 {len(orders)} 个独立订单、{len(its)} 条商品行。比如 {first["date"]} 的「{first["name"]}」。'
     data = {"meta": {"owner": "示意店长" if demo else "店长", "range": p["range"], "ordersRead": p["orders_read"], "scope": p["selection"],
+                     "requestedRange": p["requested_range"],
                      "by": "豆包电脑版", "demo": demo, "dataset": hashlib.sha256(json.dumps(its, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:12],
                      "amountNote": "列表实付；未逐单核退款", "coverageNote": p["coverage"].get("note", "覆盖未确认")},
             "theme": p["theme"], "scheme": {"shop": prefix+p["shop"], "service": "客服小豆"},
