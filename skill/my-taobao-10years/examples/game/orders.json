@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "demo": true,
+  "coverage": {
+    "complete": false,
+    "note": "虚构示意数据，仅含模拟日期；不是任何人的订单"
+  },
+  "orders": [
+    {
+      "id": "demo-game-001",
+      "date": "2019-03-10",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 299,
+      "items": [
+        {
+          "title": "【虚构示意】像素游戏卡带",
+          "name": "像素游戏卡带",
+          "category": "游戏卡带",
+          "digital": true,
+          "brand": "像素",
+          "color": "红色",
+          "qty": 1,
+          "spec": "红色（虚构）",
+          "product_key": "像素游戏卡带",
+          "image": "images/demo-001.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-game-002",
+      "date": "2019-06-11",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 406,
+      "items": [
+        {
+          "title": "【虚构示意】轻握手柄",
+          "name": "轻握手柄",
+          "category": "手柄",
+          "digital": true,
+          "brand": "轻握",
+          "color": "白色",
+          "qty": 1,
+          "spec": "白色（虚构）",
+          "product_key": "轻握手柄",
+          "image": "images/demo-002.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-game-003",
+      "date": "2019-10-12",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 2013,
+      "items": [
+        {
+          "title": "【虚构示意】方块掌机 第1代",
+          "name": "方块掌机 第1代",
+          "category": "掌机",
+          "digital": true,
+          "brand": "方块",
+          "color": "灰色",
+          "qty": 1,
+          "spec": "灰色（虚构）",
+          "product_key": "方块掌机 第1代",
+          "image": "images/demo-003.svg",
+          "product_line": "方块掌机",
+          "generation": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-game-004",
+      "date": "2020-03-13",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 320,
+      "items": [
+        {
+          "title": "【虚构示意】像素游戏卡带",
+          "name": "像素游戏卡带",
+          "category": "游戏卡带",
+          "digital": true,
+          "brand": "像素",
+          "color": "红色",
+          "qty": 1,
+          "spec": "红色（虚构）",
+          "product_key": "像素游戏卡带",
+          "image": "images/demo-004.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-game-005",
+      "date": "2020-06-14",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 427,
+      "items": [
+        {
+          "title": "【虚构示意】轻握手柄",
+          "name": "轻握手柄",
+          "category": "手柄",
+          "digital": true,
+          "brand": "轻握",
+          "color": "白色",
+          "qty": 1,
+          "spec": "白色（虚构）",
+          "product_key": "轻握手柄",
+          "image": "images/demo-005.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-game-006",
+      "date": "2020-10-15",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 2034,
+      "items": [
+        {
+          "title": "【虚构示意】方块掌机 第2代",
+          "name": "方块掌机 第2代",
+          "category": "掌机",
+          "digital": true,
+          "brand": "方块",
+          "color": "灰色",
+          "qty": 1,
+          "spec": "灰色（虚构）",
+          "product_key": "方块掌机 第2代",
+          "image": "images/demo-006.svg",
+          "product_line": "方块掌机",
+          "generation": 2
+        }
+      ]
+    },
+    {
+      "id": "demo-game-007",
+      "date": "2021-03-16",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 341,
+      "items": [
+        {
+          "title": "【虚构示意】像素游戏卡带",
+          "name": "像素游戏卡带",
+          "category": "游戏卡带",
+          "digital": true,
+          "brand": "像素",
+          "color": "红色",
+          "qty": 1,
+          "spec": "红色（虚构）",
+          "product_key": "像素游戏卡带",
+          "image": "images/demo-007.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-game-008",
+      "date": "2021-06-17",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 448,
+      "items": [
+        {
+          "title": "【虚构示意】轻握手柄",
+          "name": "轻握手柄",
+          "category": "手柄",
+          "digital": true,
+          "brand": "轻握",
+          "color": "白色",
+          "qty": 1,
+          "spec": "白色（虚构）",
+          "product_key": "轻握手柄",
+          "image": "images/demo-008.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-game-009",
+      "date": "2021-10-18",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 2055,
+      "items": [
+        {
+          "title": "【虚构示意】方块掌机 第3代",
+          "name": "方块掌机 第3代",
+          "category": "掌机",
+          "digital": true,
+          "brand": "方块",
+          "color": "灰色",
+          "qty": 1,
+          "spec": "灰色（虚构）",
+          "product_key": "方块掌机 第3代",
+          "image": "images/demo-009.svg",
+          "product_line": "方块掌机",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-game-010",
+      "date": "2022-03-19",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 362,
+      "items": [
+        {
+          "title": "【虚构示意】像素游戏卡带",
+          "name": "像素游戏卡带",
+          "category": "游戏卡带",
+          "digital": true,
+          "brand": "像素",
+          "color": "红色",
+          "qty": 1,
+          "spec": "红色（虚构）",
+          "product_key": "像素游戏卡带",
+          "image": "images/demo-010.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-game-011",
+      "date": "2022-06-20",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 469,
+      "items": [
+        {
+          "title": "【虚构示意】轻握手柄",
+          "name": "轻握手柄",
+          "category": "手柄",
+          "digital": true,
+          "brand": "轻握",
+          "color": "白色",
+          "qty": 1,
+          "spec": "白色（虚构）",
+          "product_key": "轻握手柄",
+          "image": "images/demo-011.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-game-012",
+      "date": "2022-10-21",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 2076,
+      "items": [
+        {
+          "title": "【虚构示意】方块掌机 第3代",
+          "name": "方块掌机 第3代",
+          "category": "掌机",
+          "digital": true,
+          "brand": "方块",
+          "color": "灰色",
+          "qty": 1,
+          "spec": "灰色（虚构）",
+          "product_key": "方块掌机 第3代",
+          "image": "images/demo-012.svg",
+          "product_line": "方块掌机",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-game-013",
+      "date": "2023-03-22",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 383,
+      "items": [
+        {
+          "title": "【虚构示意】像素游戏卡带",
+          "name": "像素游戏卡带",
+          "category": "游戏卡带",
+          "digital": true,
+          "brand": "像素",
+          "color": "红色",
+          "qty": 1,
+          "spec": "红色（虚构）",
+          "product_key": "像素游戏卡带",
+          "image": "images/demo-013.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-game-014",
+      "date": "2023-06-23",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 490,
+      "items": [
+        {
+          "title": "【虚构示意】轻握手柄",
+          "name": "轻握手柄",
+          "category": "手柄",
+          "digital": true,
+          "brand": "轻握",
+          "color": "白色",
+          "qty": 1,
+          "spec": "白色（虚构）",
+          "product_key": "轻握手柄",
+          "image": "images/demo-014.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-game-015",
+      "date": "2023-10-24",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 2097,
+      "items": [
+        {
+          "title": "【虚构示意】方块掌机 第3代",
+          "name": "方块掌机 第3代",
+          "category": "掌机",
+          "digital": true,
+          "brand": "方块",
+          "color": "灰色",
+          "qty": 1,
+          "spec": "灰色（虚构）",
+          "product_key": "方块掌机 第3代",
+          "image": "images/demo-015.svg",
+          "product_line": "方块掌机",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-game-016",
+      "date": "2024-03-25",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 404,
+      "items": [
+        {
+          "title": "【虚构示意】像素游戏卡带",
+          "name": "像素游戏卡带",
+          "category": "游戏卡带",
+          "digital": true,
+          "brand": "像素",
+          "color": "红色",
+          "qty": 1,
+          "spec": "红色（虚构）",
+          "product_key": "像素游戏卡带",
+          "image": "images/demo-016.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-game-017",
+      "date": "2024-06-26",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 511,
+      "items": [
+        {
+          "title": "【虚构示意】轻握手柄",
+          "name": "轻握手柄",
+          "category": "手柄",
+          "digital": true,
+          "brand": "轻握",
+          "color": "白色",
+          "qty": 1,
+          "spec": "白色（虚构）",
+          "product_key": "轻握手柄",
+          "image": "images/demo-017.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-game-018",
+      "date": "2024-10-27",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 2118,
+      "items": [
+        {
+          "title": "【虚构示意】方块掌机 第3代",
+          "name": "方块掌机 第3代",
+          "category": "掌机",
+          "digital": true,
+          "brand": "方块",
+          "color": "灰色",
+          "qty": 1,
+          "spec": "灰色（虚构）",
+          "product_key": "方块掌机 第3代",
+          "image": "images/demo-018.svg",
+          "product_line": "方块掌机",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-game-901",
+      "date": "2022-01-05",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 29,
+      "items": [
+        {
+          "title": "【虚构示意】松林坚果礼盒",
+          "name": "松林坚果礼盒",
+          "category": "食品",
+          "digital": false,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-game-902",
+      "date": "2023-01-06",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 19,
+      "items": [
+        {
+          "title": "【虚构示意】快餐双人券",
+          "name": "快餐双人券",
+          "category": "外卖券",
+          "digital": false,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-game-903",
+      "date": "2024-01-07",
+      "status": "已关闭",
+      "refund": "未逐单核实",
+      "paid": 10,
+      "items": [
+        {
+          "title": "【虚构示意】未成交商品",
+          "name": "未成交商品",
+          "category": "数码",
+          "digital": true,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-game-904",
+      "date": "2024-02-08",
+      "status": "交易成功",
+      "refund": "已退款",
+      "paid": 10,
+      "items": [
+        {
+          "title": "【虚构示意】已退款商品",
+          "name": "已退款商品",
+          "category": "数码",
+          "digital": true,
+          "qty": 1
+        }
+      ]
+    }
+  ]
+}

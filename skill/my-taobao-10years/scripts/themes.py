@@ -13,15 +13,14 @@ DIGITAL={
  'heroPalette':['#a9c2ff','#d4bdfb','#bfe7f4','#ffd3e2','#c4ecd2','#ffe2b8'], 'voice':'平实亲切'}
 
 BASES={
- '宠物':('#f6f3e9','#aee82f','#7853e6','#63a16b'),
- '母婴':('#fff0ec','#ffbd39','#a74398','#e28aa2'),
- '户外':('#ecf2e9','#c5ed35','#237969','#499083'),
- '美妆':('#faedf4','#ff97c9','#9252d5','#bd76af'),
- '其他':('#f5f0e8','#ffce39','#6b59cf','#7d92b5')}
+ '手机':('#ecf2e9','#c5ed35','#237969','#499083'),
+ '影音':('#faedf4','#ff97c9','#9252d5','#bd76af'),
+ '影像':('#f5f0e8','#ffce39','#6b59cf','#7d92b5'),
+ '电脑':('#f6f3e9','#aee82f','#7853e6','#63a16b')}
 
 def theme_for(main):
-    if main=='数码':return {**DIGITAL,'heroPalette':DIGITAL['heroPalette'][:]}
-    bg,accent,accent2,pc=BASES.get(main,BASES['其他'])
+    if main not in BASES:return {**DIGITAL,'heroPalette':DIGITAL['heroPalette'][:]}
+    bg,accent,accent2,pc=BASES[main]
     h,_,_=colorsys.rgb_to_hls(*[int(pc[k:k+2],16)/255 for k in (1,3,5)])
     pal=['#'+''.join('%02x'%round(v*255) for v in colorsys.hls_to_rgb((h+offset)%1,.84,.54)) for offset in (0,.13,.28,.46,.66,.85)]
     return {**DIGITAL,'palette':main,'bg':bg,'accent':accent,'accent2':accent2,

@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "demo": true,
+  "coverage": {
+    "complete": false,
+    "note": "虚构示意数据，仅含模拟日期；不是任何人的订单"
+  },
+  "orders": [
+    {
+      "id": "demo-phone-001",
+      "date": "2019-03-10",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 39,
+      "items": [
+        {
+          "title": "【虚构示意】轻充快充数据线",
+          "name": "轻充快充数据线",
+          "category": "数据线",
+          "digital": true,
+          "brand": "轻充",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "轻充快充数据线",
+          "image": "images/demo-001.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-002",
+      "date": "2019-06-11",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 66,
+      "items": [
+        {
+          "title": "【虚构示意】云壳手机壳",
+          "name": "云壳手机壳",
+          "category": "手机壳",
+          "digital": true,
+          "brand": "云壳",
+          "color": "雾蓝",
+          "qty": 1,
+          "spec": "雾蓝（虚构）",
+          "product_key": "云壳手机壳",
+          "image": "images/demo-002.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-003",
+      "date": "2019-10-12",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 3013,
+      "items": [
+        {
+          "title": "【虚构示意】星环手机 第1代",
+          "name": "星环手机 第1代",
+          "category": "手机",
+          "digital": true,
+          "brand": "星环",
+          "color": "银色",
+          "qty": 1,
+          "spec": "银色（虚构）",
+          "product_key": "星环手机 第1代",
+          "image": "images/demo-003.svg",
+          "product_line": "星环手机",
+          "generation": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-004",
+      "date": "2020-03-13",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 60,
+      "items": [
+        {
+          "title": "【虚构示意】轻充快充数据线",
+          "name": "轻充快充数据线",
+          "category": "数据线",
+          "digital": true,
+          "brand": "轻充",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "轻充快充数据线",
+          "image": "images/demo-004.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-005",
+      "date": "2020-06-14",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 87,
+      "items": [
+        {
+          "title": "【虚构示意】云壳手机壳",
+          "name": "云壳手机壳",
+          "category": "手机壳",
+          "digital": true,
+          "brand": "云壳",
+          "color": "雾蓝",
+          "qty": 1,
+          "spec": "雾蓝（虚构）",
+          "product_key": "云壳手机壳",
+          "image": "images/demo-005.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-006",
+      "date": "2020-10-15",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 3034,
+      "items": [
+        {
+          "title": "【虚构示意】星环手机 第2代",
+          "name": "星环手机 第2代",
+          "category": "手机",
+          "digital": true,
+          "brand": "星环",
+          "color": "银色",
+          "qty": 1,
+          "spec": "银色（虚构）",
+          "product_key": "星环手机 第2代",
+          "image": "images/demo-006.svg",
+          "product_line": "星环手机",
+          "generation": 2
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-007",
+      "date": "2021-03-16",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 81,
+      "items": [
+        {
+          "title": "【虚构示意】轻充快充数据线",
+          "name": "轻充快充数据线",
+          "category": "数据线",
+          "digital": true,
+          "brand": "轻充",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "轻充快充数据线",
+          "image": "images/demo-007.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-008",
+      "date": "2021-06-17",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 108,
+      "items": [
+        {
+          "title": "【虚构示意】云壳手机壳",
+          "name": "云壳手机壳",
+          "category": "手机壳",
+          "digital": true,
+          "brand": "云壳",
+          "color": "雾蓝",
+          "qty": 1,
+          "spec": "雾蓝（虚构）",
+          "product_key": "云壳手机壳",
+          "image": "images/demo-008.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-009",
+      "date": "2021-10-18",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 3055,
+      "items": [
+        {
+          "title": "【虚构示意】星环手机 第3代",
+          "name": "星环手机 第3代",
+          "category": "手机",
+          "digital": true,
+          "brand": "星环",
+          "color": "银色",
+          "qty": 1,
+          "spec": "银色（虚构）",
+          "product_key": "星环手机 第3代",
+          "image": "images/demo-009.svg",
+          "product_line": "星环手机",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-010",
+      "date": "2022-03-19",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 102,
+      "items": [
+        {
+          "title": "【虚构示意】轻充快充数据线",
+          "name": "轻充快充数据线",
+          "category": "数据线",
+          "digital": true,
+          "brand": "轻充",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "轻充快充数据线",
+          "image": "images/demo-010.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-011",
+      "date": "2022-06-20",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 129,
+      "items": [
+        {
+          "title": "【虚构示意】云壳手机壳",
+          "name": "云壳手机壳",
+          "category": "手机壳",
+          "digital": true,
+          "brand": "云壳",
+          "color": "雾蓝",
+          "qty": 1,
+          "spec": "雾蓝（虚构）",
+          "product_key": "云壳手机壳",
+          "image": "images/demo-011.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-012",
+      "date": "2022-10-21",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 3076,
+      "items": [
+        {
+          "title": "【虚构示意】星环手机 第3代",
+          "name": "星环手机 第3代",
+          "category": "手机",
+          "digital": true,
+          "brand": "星环",
+          "color": "银色",
+          "qty": 1,
+          "spec": "银色（虚构）",
+          "product_key": "星环手机 第3代",
+          "image": "images/demo-012.svg",
+          "product_line": "星环手机",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-013",
+      "date": "2023-03-22",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 123,
+      "items": [
+        {
+          "title": "【虚构示意】轻充快充数据线",
+          "name": "轻充快充数据线",
+          "category": "数据线",
+          "digital": true,
+          "brand": "轻充",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "轻充快充数据线",
+          "image": "images/demo-013.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-014",
+      "date": "2023-06-23",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 150,
+      "items": [
+        {
+          "title": "【虚构示意】云壳手机壳",
+          "name": "云壳手机壳",
+          "category": "手机壳",
+          "digital": true,
+          "brand": "云壳",
+          "color": "雾蓝",
+          "qty": 1,
+          "spec": "雾蓝（虚构）",
+          "product_key": "云壳手机壳",
+          "image": "images/demo-014.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-015",
+      "date": "2023-10-24",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 3097,
+      "items": [
+        {
+          "title": "【虚构示意】星环手机 第3代",
+          "name": "星环手机 第3代",
+          "category": "手机",
+          "digital": true,
+          "brand": "星环",
+          "color": "银色",
+          "qty": 1,
+          "spec": "银色（虚构）",
+          "product_key": "星环手机 第3代",
+          "image": "images/demo-015.svg",
+          "product_line": "星环手机",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-016",
+      "date": "2024-03-25",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 144,
+      "items": [
+        {
+          "title": "【虚构示意】轻充快充数据线",
+          "name": "轻充快充数据线",
+          "category": "数据线",
+          "digital": true,
+          "brand": "轻充",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "轻充快充数据线",
+          "image": "images/demo-016.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-017",
+      "date": "2024-06-26",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 171,
+      "items": [
+        {
+          "title": "【虚构示意】云壳手机壳",
+          "name": "云壳手机壳",
+          "category": "手机壳",
+          "digital": true,
+          "brand": "云壳",
+          "color": "雾蓝",
+          "qty": 1,
+          "spec": "雾蓝（虚构）",
+          "product_key": "云壳手机壳",
+          "image": "images/demo-017.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-018",
+      "date": "2024-10-27",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 3118,
+      "items": [
+        {
+          "title": "【虚构示意】星环手机 第3代",
+          "name": "星环手机 第3代",
+          "category": "手机",
+          "digital": true,
+          "brand": "星环",
+          "color": "银色",
+          "qty": 1,
+          "spec": "银色（虚构）",
+          "product_key": "星环手机 第3代",
+          "image": "images/demo-018.svg",
+          "product_line": "星环手机",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-901",
+      "date": "2022-01-05",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 29,
+      "items": [
+        {
+          "title": "【虚构示意】松林坚果礼盒",
+          "name": "松林坚果礼盒",
+          "category": "食品",
+          "digital": false,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-902",
+      "date": "2023-01-06",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 19,
+      "items": [
+        {
+          "title": "【虚构示意】快餐双人券",
+          "name": "快餐双人券",
+          "category": "外卖券",
+          "digital": false,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-903",
+      "date": "2024-01-07",
+      "status": "已关闭",
+      "refund": "未逐单核实",
+      "paid": 10,
+      "items": [
+        {
+          "title": "【虚构示意】未成交商品",
+          "name": "未成交商品",
+          "category": "数码",
+          "digital": true,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-phone-904",
+      "date": "2024-02-08",
+      "status": "交易成功",
+      "refund": "已退款",
+      "paid": 10,
+      "items": [
+        {
+          "title": "【虚构示意】已退款商品",
+          "name": "已退款商品",
+          "category": "数码",
+          "digital": true,
+          "qty": 1
+        }
+      ]
+    }
+  ]
+}

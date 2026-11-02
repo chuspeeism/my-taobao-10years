@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "demo": true,
+  "coverage": {
+    "complete": false,
+    "note": "虚构示意数据，仅含模拟日期；不是任何人的订单"
+  },
+  "orders": [
+    {
+      "id": "demo-camera-001",
+      "date": "2019-03-10",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 199,
+      "items": [
+        {
+          "title": "【虚构示意】晨光相机存储卡",
+          "name": "晨光相机存储卡",
+          "category": "存储卡",
+          "digital": true,
+          "brand": "晨光",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "晨光相机存储卡",
+          "image": "images/demo-001.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-002",
+      "date": "2019-06-11",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 266,
+      "items": [
+        {
+          "title": "【虚构示意】暖光补光灯",
+          "name": "暖光补光灯",
+          "category": "补光灯",
+          "digital": true,
+          "brand": "暖光",
+          "color": "白色",
+          "qty": 1,
+          "spec": "白色（虚构）",
+          "product_key": "暖光补光灯",
+          "image": "images/demo-002.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-003",
+      "date": "2019-10-12",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 6013,
+      "items": [
+        {
+          "title": "【虚构示意】远山微单相机 第1代",
+          "name": "远山微单相机 第1代",
+          "category": "相机",
+          "digital": true,
+          "brand": "远山",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "远山微单相机 第1代",
+          "image": "images/demo-003.svg",
+          "product_line": "远山微单相机",
+          "generation": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-004",
+      "date": "2020-03-13",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 220,
+      "items": [
+        {
+          "title": "【虚构示意】晨光相机存储卡",
+          "name": "晨光相机存储卡",
+          "category": "存储卡",
+          "digital": true,
+          "brand": "晨光",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "晨光相机存储卡",
+          "image": "images/demo-004.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-005",
+      "date": "2020-06-14",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 287,
+      "items": [
+        {
+          "title": "【虚构示意】暖光补光灯",
+          "name": "暖光补光灯",
+          "category": "补光灯",
+          "digital": true,
+          "brand": "暖光",
+          "color": "白色",
+          "qty": 1,
+          "spec": "白色（虚构）",
+          "product_key": "暖光补光灯",
+          "image": "images/demo-005.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-006",
+      "date": "2020-10-15",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 6034,
+      "items": [
+        {
+          "title": "【虚构示意】远山微单相机 第2代",
+          "name": "远山微单相机 第2代",
+          "category": "相机",
+          "digital": true,
+          "brand": "远山",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "远山微单相机 第2代",
+          "image": "images/demo-006.svg",
+          "product_line": "远山微单相机",
+          "generation": 2
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-007",
+      "date": "2021-03-16",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 241,
+      "items": [
+        {
+          "title": "【虚构示意】晨光相机存储卡",
+          "name": "晨光相机存储卡",
+          "category": "存储卡",
+          "digital": true,
+          "brand": "晨光",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "晨光相机存储卡",
+          "image": "images/demo-007.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-008",
+      "date": "2021-06-17",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 308,
+      "items": [
+        {
+          "title": "【虚构示意】暖光补光灯",
+          "name": "暖光补光灯",
+          "category": "补光灯",
+          "digital": true,
+          "brand": "暖光",
+          "color": "白色",
+          "qty": 1,
+          "spec": "白色（虚构）",
+          "product_key": "暖光补光灯",
+          "image": "images/demo-008.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-009",
+      "date": "2021-10-18",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 6055,
+      "items": [
+        {
+          "title": "【虚构示意】远山微单相机 第3代",
+          "name": "远山微单相机 第3代",
+          "category": "相机",
+          "digital": true,
+          "brand": "远山",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "远山微单相机 第3代",
+          "image": "images/demo-009.svg",
+          "product_line": "远山微单相机",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-010",
+      "date": "2022-03-19",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 262,
+      "items": [
+        {
+          "title": "【虚构示意】晨光相机存储卡",
+          "name": "晨光相机存储卡",
+          "category": "存储卡",
+          "digital": true,
+          "brand": "晨光",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "晨光相机存储卡",
+          "image": "images/demo-010.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-011",
+      "date": "2022-06-20",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 329,
+      "items": [
+        {
+          "title": "【虚构示意】暖光补光灯",
+          "name": "暖光补光灯",
+          "category": "补光灯",
+          "digital": true,
+          "brand": "暖光",
+          "color": "白色",
+          "qty": 1,
+          "spec": "白色（虚构）",
+          "product_key": "暖光补光灯",
+          "image": "images/demo-011.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-012",
+      "date": "2022-10-21",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 6076,
+      "items": [
+        {
+          "title": "【虚构示意】远山微单相机 第3代",
+          "name": "远山微单相机 第3代",
+          "category": "相机",
+          "digital": true,
+          "brand": "远山",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "远山微单相机 第3代",
+          "image": "images/demo-012.svg",
+          "product_line": "远山微单相机",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-013",
+      "date": "2023-03-22",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 283,
+      "items": [
+        {
+          "title": "【虚构示意】晨光相机存储卡",
+          "name": "晨光相机存储卡",
+          "category": "存储卡",
+          "digital": true,
+          "brand": "晨光",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "晨光相机存储卡",
+          "image": "images/demo-013.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-014",
+      "date": "2023-06-23",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 350,
+      "items": [
+        {
+          "title": "【虚构示意】暖光补光灯",
+          "name": "暖光补光灯",
+          "category": "补光灯",
+          "digital": true,
+          "brand": "暖光",
+          "color": "白色",
+          "qty": 1,
+          "spec": "白色（虚构）",
+          "product_key": "暖光补光灯",
+          "image": "images/demo-014.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-015",
+      "date": "2023-10-24",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 6097,
+      "items": [
+        {
+          "title": "【虚构示意】远山微单相机 第3代",
+          "name": "远山微单相机 第3代",
+          "category": "相机",
+          "digital": true,
+          "brand": "远山",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "远山微单相机 第3代",
+          "image": "images/demo-015.svg",
+          "product_line": "远山微单相机",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-016",
+      "date": "2024-03-25",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 304,
+      "items": [
+        {
+          "title": "【虚构示意】晨光相机存储卡",
+          "name": "晨光相机存储卡",
+          "category": "存储卡",
+          "digital": true,
+          "brand": "晨光",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "晨光相机存储卡",
+          "image": "images/demo-016.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-017",
+      "date": "2024-06-26",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 371,
+      "items": [
+        {
+          "title": "【虚构示意】暖光补光灯",
+          "name": "暖光补光灯",
+          "category": "补光灯",
+          "digital": true,
+          "brand": "暖光",
+          "color": "白色",
+          "qty": 1,
+          "spec": "白色（虚构）",
+          "product_key": "暖光补光灯",
+          "image": "images/demo-017.svg"
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-018",
+      "date": "2024-10-27",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 6118,
+      "items": [
+        {
+          "title": "【虚构示意】远山微单相机 第3代",
+          "name": "远山微单相机 第3代",
+          "category": "相机",
+          "digital": true,
+          "brand": "远山",
+          "color": "黑色",
+          "qty": 1,
+          "spec": "黑色（虚构）",
+          "product_key": "远山微单相机 第3代",
+          "image": "images/demo-018.svg",
+          "product_line": "远山微单相机",
+          "generation": 3
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-901",
+      "date": "2022-01-05",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 29,
+      "items": [
+        {
+          "title": "【虚构示意】松林坚果礼盒",
+          "name": "松林坚果礼盒",
+          "category": "食品",
+          "digital": false,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-902",
+      "date": "2023-01-06",
+      "status": "交易成功",
+      "refund": "未逐单核实",
+      "paid": 19,
+      "items": [
+        {
+          "title": "【虚构示意】快餐双人券",
+          "name": "快餐双人券",
+          "category": "外卖券",
+          "digital": false,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-903",
+      "date": "2024-01-07",
+      "status": "已关闭",
+      "refund": "未逐单核实",
+      "paid": 10,
+      "items": [
+        {
+          "title": "【虚构示意】未成交商品",
+          "name": "未成交商品",
+          "category": "数码",
+          "digital": true,
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "demo-camera-904",
+      "date": "2024-02-08",
+      "status": "交易成功",
+      "refund": "已退款",
+      "paid": 10,
+      "items": [
+        {
+          "title": "【虚构示意】已退款商品",
+          "name": "已退款商品",
+          "category": "数码",
+          "digital": true,
+          "qty": 1
+        }
+      ]
+    }
+  ]
+}
