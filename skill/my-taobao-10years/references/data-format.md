@@ -41,6 +41,6 @@ profile 中的类别、品牌、颜色以**商品行**计算，不是订单数�
 
 输出 data.js 只使用 o0001/i0001 新编号，图片同步改成 i0001.ext；保留实际日期和单件已知实付，不公开原始ID或链接。profile 也会进入本地网页文件夹用于核对，应同样检查隐私，不能直接把采集日志丢进分享文件。
 
-`narrative.json` 支持 `shop`、`hero`、`story`、`bgm`、`egg`、`plan`、`chat`，会与自动结果合并，不可覆盖 orders/items/theme/meta。示例参考 `examples/`。items/featured 的证据ID必须在展示范围；文字是否符合证据仍须人工核对。
+`narrative.json` 支持 `shop`、`hero`、`story`、`bgm`、`egg`、`plan`、`chat`，会与自动结果合并，不可覆盖 orders/items/theme/meta。另有 `hide`（不上架的商品ID数组）和 `spotlight_reviewed`（看过 `profile.spotlight` 后写 true，真实数据缺它 `build` 不放行）。示例参考 `examples/`。items/featured 的证据ID必须在展示范围；文字是否符合证据仍须人工核对。
 
 story={summary,keywords,years,chapters}；years 的键为四位年份，值为 {title,line}；chapters 每条为 {id,kind,title,period,big,items,text}。egg={role,work,verdict,candidates,like,unlike,whyNot,tone}；like/unlike 每条 {point,text,items}；whyNot 每条 {role,text}。bgm={song,singer,verdict,reasons,candidates,tone}；reasons 每条 {point,text,items}；candidates 每首包含上述字段与去听url。plan.groups 每组为 {name,items}，每条 {id,month,text,basis}。chat={enabled,name,greeting,presets,endpoint}，presets 每条 {q,a,items}，endpoint 必须留空。
