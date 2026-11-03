@@ -162,6 +162,12 @@ def spotlight(its):
             out.append({"id": i["id"], "name": i["name"], "cat": i["cat"]})
     return out
 
+def not_shown_review(rows, top=60, cap=300):
+    """没上架、但最可能判错的行：最贵的一批，加上标题带数码词的。整批判错时大件会全漏，这一步靠豆包再看一遍。"""
+    by_price = sorted(rows, key=lambda r: (-r["paid"], r["date"], r["title"]))
+    chosen = by_price[:top] + [r for r in by_price[top:] if any(w in r["title"].lower() for w in DIGITAL_WORDS)]
+    return chosen[:cap]
+
 def analyze(source, keep_sensitive=False, hide=()):
     window = requested_window(source)
     rows = source.get("orders", [])
@@ -197,7 +203,7 @@ def analyze(source, keep_sensitive=False, hide=()):
             raise ValueError("交易成功订单缺少商品，不能静默丢弃")
         normalized.append(row)
     normalized.sort(key=lambda r: (r["date"], r["id"]))
-    orders, items = [], []
+    orders, items, not_shown = [], [], []
     for row in normalized:
         oid = "o%04d" % (len(orders) + 1)
         private_map[oid] = row["id"]
@@ -206,6 +212,12 @@ def analyze(source, keep_sensitive=False, hide=()):
         for raw in row["items"]:
             if not is_digital(raw):
                 excluded["不是数码产品或配件"] += 1
+                title = str(raw.get("title") or "")
+                # 标题明确是虚拟商品的不用再看；敏感商品的名字也不列出来。
+                if title and not any(w in title for w in NOT_DIGITAL) and not sensitive_group(raw):
+                    known = money(raw.get("paid"))
+                    not_shown.append({"date": row["date"], "title": title[:50], "paid": known if known is not None else order["paid"] or 0,
+                                      "paid_basis": "这一行" if known is not None or len(row["items"]) == 1 else "整单%d行" % len(row["items"])})
                 continue
             if not keep_sensitive and sensitive_group(raw):
                 # 被下架的这一行不进任何对外文件。
@@ -274,7 +286,7 @@ def analyze(source, keep_sensitive=False, hide=()):
     treasure = max(selected, key=lambda i: (i["price"] is not None, i["price"] or 0, i["date"]), default=None)
     return {"schema_version": 1, "demo": bool(source.get("demo")), "mainline": main, "line": line,
             "requested_range": window,
-            "selection": "数码产品及配件", "spotlight": spotlight(selected),
+            "selection": "数码产品及配件", "spotlight": spotlight(selected), "not_shown_review": not_shown_review(not_shown),
             "count_basis": "品类/品牌/颜色按商品行计数；回购按独立订单；数量另列；不汇总消费金额",
             "coverage": source.get("coverage", {"complete": False, "note": "未提供覆盖报告"}),
             "excluded": dict(excluded), "orders_read": len(orders), "orders_shown": len(selected_orders),
@@ -428,6 +440,10 @@ def build(source_path, out, narrative_path=None, keep_sensitive=False):
     p = analyze(load(source_path), keep_sensitive, (narrative or {}).get("hide", ()))
     if narrative is not None and not p["demo"] and not narrative.get("spotlight_reviewed"):
         raise ValueError("先逐条看过 profile.spotlight：不适合被录屏分享的商品ID写进 narrative.json 的 hide，看完写 spotlight_reviewed: true，再生成")
+    if narrative is not None and not p["demo"] and not narrative.get("not_shown_reviewed"):
+        raise ValueError("先看一遍 profile.not_shown_review：这些没上架的商品里，是实体数码的，在 orders.json 改成 digital: true 并写好 category，重新 analyze；看完在 narrative.json 写 not_shown_reviewed: true，再生成")
+    # 没上架的商品名只留在私有目录的 profile.json，不跟网页文件夹走。
+    p.pop("not_shown_review", None)
     data = webpage(p, narrative)
     errors = privacy_errors(data)
     if errors:
@@ -467,7 +483,7 @@ def main():
     v = sub.add_parser("check"); v.add_argument("folder")
     args = ap.parse_args()
     if args.cmd == "analyze":
-        p = analyze(load(args.orders), args.keep_sensitive); save(args.profile, p); print(json.dumps({"orders": p["orders_shown"], "items": p["items_shown"], "line": p["line"], "excluded": p["excluded"]}, ensure_ascii=False))
+        p = analyze(load(args.orders), args.keep_sensitive); save(args.profile, p); print(json.dumps({"orders": p["orders_shown"], "items": p["items_shown"], "line": p["line"], "excluded": p["excluded"], "not_shown_review": len(p["not_shown_review"])}, ensure_ascii=False))
     elif args.cmd == "build":
         print(json.dumps(build(args.orders, args.output, args.narrative, args.keep_sensitive), ensure_ascii=False))
     elif args.cmd == "bundle":
